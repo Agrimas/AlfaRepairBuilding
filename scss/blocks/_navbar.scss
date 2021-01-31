@@ -1,0 +1,49 @@
+.navbar-brand {
+	position: relative;
+	width: 50%;
+	@media (min-width: 768px) {
+		width: auto;
+	}
+}
+
+.nav-item {
+	font-weight: 500;
+
+	a {
+		font-size: 18px;
+		color: black;
+		text-decoration: none;
+		&[href^="tel"] {
+			font-family: "Montserrat", sans-serif;
+			font-weight: 800;
+			font-size: 22px;
+			border: none;
+		}
+		&#cube-link {
+			span {
+				font-family: "Arial", sans-serif;
+			}
+		}
+		@media (min-width: 992px) {
+			&#cube-link {
+				padding-bottom: 10px;
+				border-bottom: 1px solid black;
+			}
+		}
+	}
+	.nav-item__contact {
+		display: inline-block;
+	}
+
+	&.btn {
+		flex: 0 0 16.666667%;
+		max-width: 16.666667%;
+	}
+	@media (min-width: 1580px) {
+		&.btn {
+			flex-basis: 238px;
+			width: 238px;
+			max-width: 238px;
+		}
+	}
+}
