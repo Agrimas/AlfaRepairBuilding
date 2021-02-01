@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<!-- Required meta tags -->
@@ -14,54 +14,107 @@
 </head>
 
 <body>
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-			<a class="navbar-brand" href="#">
-				<img src="/img/logo.svg" alt="logo" class="d-inline-block align-top img-fluid">
-			</a>
+	<div class="wrapper">\
+		<section id="menu">
+			<div class="container">
+				<nav id="menu_1" class="navbar navbar-expand-lg navbar-light">
+					<a class="navbar-brand" href="#">
+						<img src="/img/logo.svg" alt="logo" class="d-inline-block align-top img-fluid">
+					</a>
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse">
-				<ul class="navbar-nav w-100 justify-content-around align-items-center">
-					<li class="nav-item">
-						Пн-Сб: c 10:00 до 20:00<br>
-						Выходной: воскресенье
-					</li>
-					<li class="nav-item">
-						<img src="/img/icon/cube.png" alt="" class="d-none d-lg-inline-block">
-						<a href="#" id="cube-link">Заказать <span>3</span>D-макет дома</a>
-					</li>
-					<li class="nav-item d-flex align-items-center">
-						<img src="/img/icon/phone.png" alt="" class="d-none d-lg-block">
-						<div>
-							<a href="tel: +7915168-55-50">+7 (915) 168-55-50</a>
-							<div class="d-flex justify-content-center">
-								<a href="" class="pr-3"><img src="/img/icon/telegram.png" alt=""></a>
-								<a href="" class="pr-3"><img src="/img/icon/viber.png" alt=""></a>
-								<a href=""><img src="/img/icon/whatsup.png" alt=""></a>
-							</div>
-						</div>
-					</li>
-					<li class="btn nav-item align-self-stretch col-2">
-						Заказать звонок
-					</li>
-				</ul>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+						aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse">
+						<ul class="navbar-nav w-100 justify-content-around align-items-center">
+							<li class="nav-item">
+								Пн-Сб: c 10:00 до 20:00<br>
+								Выходной: воскресенье
+							</li>
+							<li class="nav-item">
+								<img src="/img/icon/cube.png" alt="" class="d-none d-xl-inline-block nav-item__icon">
+								<a href="#" id="cube-link">Заказать <span>3</span>D-макет дома</a>
+							</li>
+							<li class="nav-item d-flex align-items-center">
+								<img src="/img/icon/phone.png" alt="" class="d-none d-xl-block nav-item__icon">
+								<div>
+									<a href="tel: +7915168-55-50">+7 (915) 168-55-50</a>
+									<div class="d-flex justify-content-center">
+										<a href="" class="pr-3"><img src="/img/icon/telegram.png" alt="Telegram"
+												class="nav-item__social-icon"></a>
+										<a href="" class="pr-3"><img src="/img/icon/viber.png" alt="Viber"
+												class="nav-item__social-icon"></a>
+										<a href=""><img src="/img/icon/whatsup.png" alt="whatsup"
+												class="nav-item__social-icon"></a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item align-self-lg-stretch pt-1 pt-lg-0 nav-item__button">
+								<button class="btn">Заказать звонок</button>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<nav id="menu_2" class="navbar navbar-expand-lg">
+					<div class="collapse navbar-collapse justify-content-center">
+						<ul class="navbar-nav col-8 justify-content-around">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Каталог домов
+								</a>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">
+									<a class="dropdown-item" href="#">Пункт1</a>
+									<a class="dropdown-item" href="#">Пункт2</a>
+									<a class="dropdown-item" href="#">Пункт3</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Услуги
+								</a>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+									<a class="dropdown-item" href="#">Проектирование домов</a>
+									<a class="dropdown-item" href="#">Монтаж кровли</a>
+									<a class="dropdown-item" href="#">Монтаж отопления</a>
+									<a class="dropdown-item" href="#">Обустройство скважин</a>
+									<a class="dropdown-item" href="#">Разводка водоснабжения</a>
+									<a class="dropdown-item" href="#">Монтаж септиков</a>
+									<a class="dropdown-item" href="#">Монтаж электрики</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									О нас
+								</a>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown3">
+									<a class="dropdown-item" href="#">Пункт1</a>
+									<a class="dropdown-item" href="#">Пункт2</a>
+									<a class="dropdown-item" href="#">Пункт3</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Контакты</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Блог
+								</a>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown4">
+									<a class="dropdown-item" href="#">Пункт1</a>
+									<a class="dropdown-item" href="#">Пункт2</a>
+									<a class="dropdown-item" href="#">Пункт3</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
 			</div>
-		</nav>
-		<nav class="navbar navbar-expand-lg navbar-light ">
-
-			<div class="collapse navbar-collapse">
-				<div class="navbar-nav">
-					<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-					<a class="nav-item nav-link" href="#">Features</a>
-					<a class="nav-item nav-link" href="#">Pricing</a>
-					<a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-				</div>
-			</div>
-		</nav>
+		</section>
 	</div>
 	<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

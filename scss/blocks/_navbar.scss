@@ -1,3 +1,10 @@
+.navbar {
+	@media (min-width: 992px) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 .navbar-brand {
 	position: relative;
 	width: 50%;
@@ -8,42 +15,114 @@
 
 .nav-item {
 	font-weight: 500;
-
 	a {
-		font-size: 18px;
-		color: black;
+		color: white;
 		text-decoration: none;
 		&[href^="tel"] {
 			font-family: "Montserrat", sans-serif;
 			font-weight: 800;
-			font-size: 22px;
+			font-size: 18px;
 			border: none;
+			@media (min-width: 1580px) {
+				& {
+					font-size: 22px;
+				}
+			}
 		}
 		&#cube-link {
+			border-bottom: 1px solid black;
 			span {
 				font-family: "Arial", sans-serif;
 			}
-		}
-		@media (min-width: 992px) {
-			&#cube-link {
-				padding-bottom: 10px;
-				border-bottom: 1px solid black;
+			@media (min-width: 992px) {
+				& {
+					padding-bottom: 10px;
+				}
+			}
+			@media (min-width: 1200px) {
+				& {
+					font-size: 18px;
+				}
 			}
 		}
 	}
-	.nav-item__contact {
-		display: inline-block;
-	}
 
-	&.btn {
-		flex: 0 0 16.666667%;
-		max-width: 16.666667%;
-	}
-	@media (min-width: 1580px) {
-		&.btn {
-			flex-basis: 238px;
+	&.nav-item__button {
+		@media (min-width: 992px) {
+			width: 16.666667%;
+		}
+
+		@media (min-width: 1580px) {
 			width: 238px;
-			max-width: 238px;
 		}
 	}
+
+	@media (min-width: 992px) {
+		.nav-item__icon {
+			width: 40px;
+		}
+		.nav-item__social-icon {
+			width: 20px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.nav-item__icon {
+			width: 64px;
+		}
+		.nav-item__social-icon {
+			width: 25px;
+		}
+	}
+}
+
+#menu_1 {
+	.nav-item {
+		a {
+			color: black;
+		}
+	}
+}
+
+#menu_2 .navbar-collapse {
+	.nav-link {
+		color: black;
+	}
+	@media (min-width: 992px) {
+		margin-top: 1rem;
+		background: linear-gradient(
+			90deg,
+			rgba(246, 246, 246, 0) 1.47%,
+			rgba(163, 210, 155, 0.92) 7.25%,
+			#319f1c 14.68%,
+			#309e1b 50.68%,
+			#319f1c 84.33%,
+			rgba(147, 202, 137, 0.79) 91.68%,
+			rgba(246, 246, 246, 0) 99.05%
+		);
+		border-radius: 3px;
+		.nav-link {
+			color: white;
+		}
+	}
+}
+
+.navbar-nav .dropdown-menu {
+	background-color: #585858;
+	float: left;
+	top: 94%;
+	padding: 13px 16px;
+	border: none;
+	border-radius: 0px 0px 3px 3px;
+	@media (min-width: 768px) {
+		padding: 26px 32px;
+	}
+}
+.dropdown-item {
+	padding-left: 0;
+	padding-bottom: 8px;
+	border-bottom: 1px solid white;
+}
+.dropdown-item:last-child {
+	border-bottom: none;
 }
