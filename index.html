@@ -14,10 +14,11 @@
 </head>
 
 <body>
-	<div class="wrapper">\
-		<section id="menu">
+	<div class="wrapper">
+		<header id="menu">
 			<div class="container">
 				<nav id="menu_1" class="navbar navbar-expand-lg navbar-light">
+
 					<a class="navbar-brand" href="#">
 						<img src="/img/logo.svg" alt="logo" class="d-inline-block align-top img-fluid">
 					</a>
@@ -26,17 +27,18 @@
 						aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
+
 					<div class="collapse navbar-collapse">
-						<ul class="navbar-nav w-100 justify-content-around align-items-center">
-							<li class="nav-item">
+						<div class="navbar-nav w-100 justify-content-around align-items-center">
+							<div class="nav-item">
 								Пн-Сб: c 10:00 до 20:00<br>
 								Выходной: воскресенье
-							</li>
-							<li class="nav-item">
+							</div>
+							<div class="nav-item">
 								<img src="/img/icon/cube.png" alt="" class="d-none d-xl-inline-block nav-item__icon">
 								<a href="#" id="cube-link">Заказать <span>3</span>D-макет дома</a>
-							</li>
-							<li class="nav-item d-flex align-items-center">
+							</div>
+							<div class="nav-item d-flex align-items-center">
 								<img src="/img/icon/phone.png" alt="" class="d-none d-xl-block nav-item__icon">
 								<div>
 									<a href="tel: +7915168-55-50">+7 (915) 168-55-50</a>
@@ -49,11 +51,9 @@
 												class="nav-item__social-icon"></a>
 									</div>
 								</div>
-							</li>
-							<li class="nav-item align-self-lg-stretch pt-1 pt-lg-0 nav-item__button">
-								<button class="btn">Заказать звонок</button>
-							</li>
-						</ul>
+							</div>
+							<button class="btn btn-order nav-item">Заказать звонок</button>
+						</div>
 					</div>
 				</nav>
 				<nav id="menu_2" class="navbar navbar-expand-lg">
@@ -114,8 +114,73 @@
 					</div>
 				</nav>
 			</div>
-		</section>
+		</header>
+		<main>
+			<section id="slider">
+				<div class="container">
+					<div class="row">
+						<div class="col-10 col-lg-6">
+							<div class="title">
+								<h1>Оставьте заявку на услугу<br>
+									<span>со скидкой 15% </span>
+								</h1>
+								<p class="mb-2">Акция действительна до конца месяца!</p>
+							</div>
+							<div class="slider__form">
+								<form>
+									<img src="/img/gift.png" alt="gift1" class="position-absolute" id="gift1">
+									<img src="/img/gift.png" alt="gift2" class="position-absolute" id="gift2">
+									<img src="/img/shepki.png" alt="shepki" class="position-absolute" id="shepki">
+									<div class="form-row">
+										<div class="col-12 col-lg-6">
+											<input type="text" class="form-control" placeholder="Ваше имя">
+											<input type="text" class="form-control" placeholder="Номер телефона">
+										</div>
+										<div class="col-12 col-lg-6">
+											<select id="services" class="custom-select">
+												<option selected>Выберите услугу</option>
+												<option value="1">Проектирование домов</option>
+												<option value="2">Монтаж кровли</option>
+												<option value="3">Монтаж отопления</option>
+												<option value="4">Обустройство скважин</option>
+												<option value="5">Разводка водоснабжения</option>
+												<option value="6">Монтаж септиков</option>
+												<option value="7">Монтаж электрики</option>
+											</select>
+											<button type="submit" class="btn">Отправить</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="group-buttons">
+					<button> <img src="/img/icon/calculator.png" alt=""></button>
+					<button> <img src="/img/icon/binoculars.png" alt=""></button>
+					<button> <img src="/img/icon/protractor.png" alt=""></button>
+					<button> <img src="/img/icon/builder.png" alt=""></button>
+				</div>
+			</section>
+		</main>
 	</div>
+	<footer class="d-none">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-3 d-flex justify-content-between flex-column">
+					<div class="logo-footer">
+						<img src="/img/logo_footer.png" alt="">
+					</div>
+					<button class="btn btn-order">Заказать звонок</button>
+				</div>
+				<div class="col-3">
+				</div>
+				<div class="col-3">3</div>
+				<div class="col-3">4</div>
+			</div>
+		</div>
+	</footer>
+
 	<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

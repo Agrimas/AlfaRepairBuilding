@@ -1,0 +1,21 @@
+footer {
+	padding-top: 50px;
+	padding-bottom: 60px;
+	background-color: #363130;
+	.btn-order,
+	.btn-order:hover,
+	.btn-order:focus,
+	.btn-order:active {
+		background-color: transparent;
+		box-shadow: none;
+		border: 2px solid white;
+		border-radius: 6px;
+	}
+
+	.logo-footer img {
+		width: auto;
+		@media (max-width: 1200px) {
+			max-width: 100%;
+		}
+	}
+}
