@@ -1,4 +1,7 @@
+html,
 body {
+	width: 100%;
+	height: 100%;
 	font-family: "Raleway", sans-serif;
 }
 
@@ -17,6 +20,10 @@ h1 {
 	span {
 		color: $green;
 	}
+}
+
+h2 {
+	font-size: 32px;
 }
 
 p {
@@ -41,6 +48,12 @@ button {
 	height: 38px;
 }
 
+.form-control {
+	@media (min-width: 1200px) {
+		padding: 8px 30px;
+	}
+}
+
 .form-control:focus,
 .custom-select:focus {
 	border-color: $green;
@@ -49,10 +62,10 @@ button {
 
 .custom-select {
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+	padding: 0;
+	padding-left: 0.5rem;
 	@media (max-width: 768px) {
 		font-size: 14px;
-		padding: 0;
-		padding-left: 0.5rem;
 	}
 }
 
@@ -65,6 +78,7 @@ button {
 	box-shadow: 0px 4px 4px #64bc45;
 	border-radius: 3px;
 	width: 100%;
+	max-width: 238px;
 	font-weight: 600;
 }
 
@@ -74,14 +88,33 @@ button {
 .btn-order:active {
 	margin: 0;
 	width: 100%;
-	max-width: 238px;
 	height: 64px;
 	font-weight: 500;
 }
 
-.wrapper {
-	background: url("/img/background/bg.png") top right / contain no-repeat;
-	@media (max-width: 768px) {
-		background-position: 80%;
+.btn-file {
+	position: relative;
+	overflow: hidden;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.btn-file input[type="file"] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 186px;
+	height: 36px;
+	font-size: 100px;
+	text-align: right;
+	opacity: 0;
+	outline: none;
+	display: block;
+	&:hover {
+		cursor: pointer;
 	}
+}
+
+.wrapper {
+	background: url("/img/background/bg.png") top right / contain no-repeat,
+		url("/img/background/cloud.png") 0% 110% / auto no-repeat;
 }

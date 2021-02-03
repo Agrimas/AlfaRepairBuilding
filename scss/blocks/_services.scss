@@ -1,0 +1,90 @@
+#block-services {
+	display: flex;
+	flex: 0 0 100%;
+	align-items: center;
+	padding-bottom: 50px;
+	@media (min-width: 768px) {
+		background: url("/img/background/tools.png") 1% 0% / 80px no-repeat;
+	}
+	@media (min-width: 992px) {
+		background-size: 100px;
+	}
+	@media (min-width: 1580px) {
+		background-size: auto;
+		padding-bottom: 140px;
+	}
+	h2{
+		text-align: center;
+	}
+	.container {
+		flex: 0 0 100%;
+	}
+	a.btn {
+		position: relative;
+		max-width: 373px;
+		width: 100%;
+		margin-bottom: 10px;
+		padding-right: 0.5rem;
+		padding-left: 0.5rem;
+		display: flex;
+		text-align: left;
+		align-items: center;
+		background-color: white;
+		box-shadow: none;
+		color: $green;
+		border: 1px solid $green;
+		transition: 0.3s;
+		@media (min-width: 1200px) {
+			margin-bottom: 30px;
+			padding-right: 0.75rem;
+			padding-left: 0.75rem;
+		}
+		svg {
+			min-width: 30px;
+			width: 30px;
+			margin-right: 4px;
+			@media (min-width: 1200px) {
+				margin-right: 18px;
+			}
+			path {
+				fill: $green;
+				stroke: inherit;
+				stroke-width: inherit;
+				transition: 0.3s;
+			}
+		}
+	}
+
+	a.btn:hover {
+		box-shadow: none;
+		background-color: $green;
+		color: white;
+		svg path {
+			fill: white;
+		}
+	}
+}
+
+.list-services {
+	width: 100%;
+	@media (min-width: 992px) {
+		width: auto;
+	}
+}
+
+.house {
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
+
+	@media (min-width: 1580px) {
+		padding: 0;
+		flex: 0 0 674px;
+		max-width: 674px;
+	}
+}
+
+.well img {
+	display: block;
+	position: relative;
+	top: 20%;
+}

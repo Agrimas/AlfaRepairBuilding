@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;900&family=Raleway:wght@400;500&display=swap");
+html,
 body {
+  width: 100%;
+  height: 100%;
   font-family: "Raleway", sans-serif;
 }
 
@@ -24,6 +27,10 @@ h1 span {
   color: #319F1C;
 }
 
+h2 {
+  font-size: 32px;
+}
+
 p {
   font-size: 18px;
   margin-bottom: 0.5rem;
@@ -46,6 +53,12 @@ button {
   height: 38px;
 }
 
+@media (min-width: 1200px) {
+  .form-control {
+    padding: 8px 30px;
+  }
+}
+
 .form-control:focus,
 .custom-select:focus {
   border-color: #319F1C;
@@ -55,13 +68,13 @@ button {
 
 .custom-select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  padding: 0;
+  padding-left: 0.5rem;
 }
 
 @media (max-width: 768px) {
   .custom-select {
     font-size: 14px;
-    padding: 0;
-    padding-left: 0.5rem;
   }
 }
 
@@ -75,6 +88,7 @@ button {
           box-shadow: 0px 4px 4px #64bc45;
   border-radius: 3px;
   width: 100%;
+  max-width: 238px;
   font-weight: 600;
 }
 
@@ -84,19 +98,36 @@ button {
 .btn-order:active {
   margin: 0;
   width: 100%;
-  max-width: 238px;
   height: 64px;
   font-weight: 500;
 }
 
-.wrapper {
-  background: url("/img/background/bg.png") top right/contain no-repeat;
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-  .wrapper {
-    background-position: 80%;
-  }
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 186px;
+  height: 36px;
+  font-size: 100px;
+  text-align: right;
+  opacity: 0;
+  outline: none;
+  display: block;
+}
+
+.btn-file input[type="file"]:hover {
+  cursor: pointer;
+}
+
+.wrapper {
+  background: url("/img/background/bg.png") top right/contain no-repeat, url("/img/background/cloud.png") 0% 110%/auto no-repeat;
 }
 
 .navbar {
@@ -237,15 +268,21 @@ button {
   border-bottom: none;
 }
 
-#slider {
+#block-slider {
   position: relative;
-  padding-top: 62px;
-  padding-bottom: 200px;
+  padding-top: 1rem;
+  padding-bottom: 50px;
 }
 
-@media (max-width: 768px) {
-  #slider {
-    padding-top: 1rem;
+@media (min-width: 768px) {
+  #block-slider {
+    padding-top: 62px;
+  }
+}
+
+@media (min-width: 1580px) {
+  #block-slider {
+    padding-bottom: 200px;
   }
 }
 
@@ -269,6 +306,10 @@ button {
     margin-top: 1rem;
     padding: 20px 10px 60px;
   }
+}
+
+.slider__form .btn {
+  max-width: 100%;
 }
 
 #gift1 {
@@ -347,6 +388,169 @@ button {
   border-radius: 3px 0px 0px 3px;
   border: none;
   margin-bottom: 10px;
+}
+
+#block-services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  #block-services {
+    background: url("/img/background/tools.png") 1% 0%/80px no-repeat;
+  }
+}
+
+@media (min-width: 992px) {
+  #block-services {
+    background-size: 100px;
+  }
+}
+
+@media (min-width: 1580px) {
+  #block-services {
+    background-size: auto;
+    padding-bottom: 140px;
+  }
+}
+
+#block-services h2 {
+  text-align: center;
+}
+
+#block-services .container {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+#block-services a.btn {
+  position: relative;
+  max-width: 373px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #319F1C;
+  border: 1px solid #319F1C;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (min-width: 1200px) {
+  #block-services a.btn {
+    margin-bottom: 30px;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+}
+
+#block-services a.btn svg {
+  min-width: 30px;
+  width: 30px;
+  margin-right: 4px;
+}
+
+@media (min-width: 1200px) {
+  #block-services a.btn svg {
+    margin-right: 18px;
+  }
+}
+
+#block-services a.btn svg path {
+  fill: #319F1C;
+  stroke: inherit;
+  stroke-width: inherit;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#block-services a.btn:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #319F1C;
+  color: white;
+}
+
+#block-services a.btn:hover svg path {
+  fill: white;
+}
+
+.list-services {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .list-services {
+    width: auto;
+  }
+}
+
+.house {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.333333%;
+          flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+@media (min-width: 1580px) {
+  .house {
+    padding: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 674px;
+            flex: 0 0 674px;
+    max-width: 674px;
+  }
+}
+
+.well img {
+  display: block;
+  position: relative;
+  top: 20%;
+}
+
+#block-form h2 {
+  margin-bottom: 20px;
+}
+
+#block-form form p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+#block-form .subtitle {
+  margin-bottom: 47px;
+}
+
+#block-form .form-control {
+  max-width: 507px;
+  margin-bottom: 20px;
+}
+
+#block-form textarea.form-control {
+  margin-bottom: 32px;
+}
+
+#block-form .btn {
+  height: 45px;
 }
 
 footer {
