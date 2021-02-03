@@ -40,6 +40,10 @@ p {
 	margin-left: auto;
 }
 
+span.three{
+				font-family: "Arial", sans-serif;
+}
+
 .form-control,
 .custom-select,
 button {
@@ -96,7 +100,6 @@ button {
 	position: relative;
 	overflow: hidden;
 	padding: 10px;
-	margin-bottom: 20px;
 }
 .btn-file input[type="file"] {
 	position: absolute;
@@ -115,6 +118,29 @@ button {
 }
 
 .wrapper {
-	background: url("/img/background/bg.png") top right / contain no-repeat,
-		url("/img/background/cloud.png") 0% 110% / auto no-repeat;
+	background: url("/img/background/house.png") top right / contain no-repeat,
+		url("/img/background/cloud.png") -10% 60% / auto no-repeat,
+		url("/img/background/brick.png") 0% 80% / auto no-repeat,
+		url("/img/background/builder.png") 55% 100% / 25% no-repeat,
+		url("/img/background/tree.png") 100% 101% / 15% no-repeat,
+		url("/img/background/cloud2.png") 100% 74% / auto no-repeat,
+		url("/img/background/house2.png") 100% 110% / 50% no-repeat;
+
+	@media (max-width: 767px) {
+		background-image: url("/img/background/house.png"), url("/img/background/cloud.png"),
+			url("/img/background/brick.png"), none, none, url("/img/background/cloud2.png"), none;
+	}
+
+	@media (min-width: 992px) {
+		background-position: top right, -10% 60%, 0% 80%, 59% 100%, 100% 101%, 100% 86%, 100% 110%;
+	}
+	@media (min-width: 1200px) {
+		background-position: top right, -10% 60%, 0% 80%, 56% 100%, 100% 101%, 100% 86%, 100% 120%;
+	}
+	@media (min-width: 1580px) {
+		background-position: top right, -10% 60%, 0% 72%, 55% 100%, 100% 101%, 100% 83%, 100% 120%;
+	}
+	@media (min-width: 1920px) {
+		background-position: top right, -10% 60%, 0% 80%, 55% 100%, 100% 101%, 100% 74%, 100% 120%;
+	}
 }
