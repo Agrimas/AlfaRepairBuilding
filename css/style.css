@@ -486,7 +486,7 @@ button {
 
 @media (min-width: 1200px) {
   #block-services a.btn {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     padding-right: 0.75rem;
     padding-left: 0.75rem;
   }
@@ -538,6 +538,7 @@ button {
       -ms-flex: 0 0 33.333333%;
           flex: 0 0 33.333333%;
   max-width: 33.333333%;
+  position: relative;
 }
 
 @media (min-width: 1580px) {
@@ -548,6 +549,34 @@ button {
             flex: 0 0 674px;
     max-width: 674px;
   }
+}
+
+.house img {
+  width: 100%;
+}
+
+.house span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #319F1C;
+}
+
+.house #house_design__point {
+  top: 21.8%;
+  left: 17%;
+}
+
+#list_services {
+  position: relative;
+}
+
+#canvas_lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .well img {

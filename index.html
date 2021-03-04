@@ -171,10 +171,11 @@
 							</h2>
 						</div>
 					</div>
-					<div class="row my-5 justify-content-center align-items-center">
+					<div class="row my-5 justify-content-center align-items-center" id="list_services">
+						<canvas id="canvas_lines"></canvas>
 						<div class="col d-flex justify-content-end">
 							<div class="list-services">
-								<a href="#" class="btn">
+								<a href="#" class="btn" id="lol">
 									<svg width="100%" height="100%" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
 										<path
 											d="M13.0014 3.55545L26.0013 11.061V7.50552L13.0014 0L8.51809 2.58842V0H3.49801V5.48676L0.00146484 7.50552V11.061L13.0014 3.55545Z"
@@ -187,7 +188,6 @@
 										<path d="M0.000488281 22.5034H26.0005V26H0.000488281V22.5034Z" fill="#319F1C" />
 									</svg>
 									Проектирование домов
-									<div class="line"></div>
 								</a>
 								<a href="#" class="btn">
 
@@ -265,8 +265,9 @@
 							</div>
 						</div>
 
-						<div class="col text-center house d-none d-lg-block">
-							<img src="/img/dom-osnovnoj.png" alt="" class="img-fluid">
+						<div class="col text-center house d-none d-lg-block" id="house">
+							<img src="/img/dom-osnovnoj.png" alt="">
+							<span id="house_design__point"></span>
 						</div>
 
 						<div class="col d-flex">
@@ -492,6 +493,43 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
 		crossorigin="anonymous"></script>
+	<script>
+		window.onload = function () {
+			const listServices = document.getElementById('list_services');
+			const canvas = document.getElementById('canvas_lines')
+			const context = canvas.getContext('2d')
+			let width = canvas.width = listServices.getBoundingClientRect().width;
+			let height = canvas.height = listServices.getBoundingClientRect().height;
+
+			function drawLine(el1, el2) {
+				context.clearRect(0, 0, width, height)
+				context.strokeStyle = '#319F1C';
+				context.lineWidth = 2;
+				context.beginPath()
+				// из центра красного квадрата
+				context.moveTo(el1.getBoundingClientRect().x + el1.getBoundingClientRect().width / 2,
+					$(el1).offset().top - $(canvas_lines).offset().top + el1.getBoundingClientRect().height / 2)
+				// в центр зелёного квадрата
+				context.lineTo(el2.getBoundingClientRect().x + el2.getBoundingClientRect().width / 2,
+					$(el2).offset().top - $(canvas_lines).offset().top + el2.getBoundingClientRect().height / 2)
+				context.stroke()
+			}
+
+
+			const houseDesignPoint = document.getElementById('house_design__point');
+			const lol = document.getElementById('lol');
+
+			drawLine(lol, houseDesignPoint);
+			$(window).resize(function () {
+				let width = canvas.width = listServices.getBoundingClientRect().width;
+				let height = canvas.height = listServices.getBoundingClientRect().height;
+				drawLine(lol, houseDesignPoint);
+			})
+		};
+
+
+
+	</script>
 </body>
 
 </html>
