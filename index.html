@@ -175,7 +175,7 @@
 						<canvas id="canvas_lines"></canvas>
 						<div class="col d-flex justify-content-end">
 							<div class="list-services">
-								<a href="#" class="btn" id="lol">
+								<a href="#" class="btn" id="house_design">
 									<svg width="100%" height="100%" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
 										<path
 											d="M13.0014 3.55545L26.0013 11.061V7.50552L13.0014 0L8.51809 2.58842V0H3.49801V5.48676L0.00146484 7.50552V11.061L13.0014 3.55545Z"
@@ -189,7 +189,7 @@
 									</svg>
 									Проектирование домов
 								</a>
-								<a href="#" class="btn">
+								<a href="#" class="btn" id="autonomous_sewerage">
 
 									<svg width="100%" height="100%" viewBox="0 0 30 30" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +211,7 @@
 
 									Установка автономной канализации
 								</a>
-								<a href="#" class="btn">
+								<a href="#" class="btn" id="distributing_water">
 									<svg width="100%" height="100%" viewBox="0 0 31 31" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0)">
@@ -248,7 +248,7 @@
 									</svg>
 									Разводка водоснабжения
 								</a>
-								<a href="#" class="btn">
+								<a href="#" class="btn" id="sewerage_wiring">
 									<svg width="100%" height="100%" viewBox="0 0 26 26" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path
@@ -267,12 +267,11 @@
 
 						<div class="col text-center house d-none d-lg-block" id="house">
 							<img src="/img/dom-osnovnoj.png" alt="">
-							<span id="house_design__point"></span>
 						</div>
 
 						<div class="col d-flex">
 							<div class="list-services">
-								<a href="#" class="btn">
+								<a href="#" class="btn" id="roof_installation">
 									<svg width="100%" height="100%" viewBox="0 0 27 27" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0)">
@@ -312,7 +311,7 @@
 									</svg>
 									Монтаж кровли
 								</a>
-								<a href="#" class="btn">
+								<a href="#" class="btn" id="well_construction">
 									<svg width="100%" height="100%" viewBox="0 0 30 30" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path
@@ -322,7 +321,7 @@
 
 									Обустройство скважин
 								</a>
-								<a href="#" class="btn">
+								<a href="#" class="btn" id="electrical_installation">
 									<svg width="100%" height="100%" viewBox="0 0 30 30" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0)">
@@ -343,7 +342,7 @@
 
 									Монтаж электрики
 								</a>
-								<a href="#" class="btn">
+								<a href="#" class="btn" id="heating_systems">
 									<svg width="100%" height="100%" viewBox="0 0 28 28" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path
@@ -374,12 +373,12 @@
 											d="M26.3594 9.29688V11.2656H24.7188V10.4453C24.7188 9.23721 23.7394 8.25781 22.5312 8.25781C21.3231 8.25781 20.3438 9.23721 20.3438 10.4453V25.8125C20.3438 27.0206 21.3231 28 22.5312 28C23.7394 28 24.7188 27.0206 24.7188 25.8125V12.9062H28V9.29688H26.3594Z"
 											fill="#319F1C" />
 									</svg>
-
 									Монтаж систем отопления
 								</a>
 							</div>
 							<div class="well d-none d-lg-block">
-								<img src="/img/well.png" alt="" class="img-fluid">
+								<img src="/img/well.png" alt="" id="well_img">
+								<!-- <span class="point" id="well_construction__point"></span> -->
 							</div>
 						</div>
 					</div>
@@ -500,35 +499,91 @@
 			const context = canvas.getContext('2d')
 			let width = canvas.width = listServices.getBoundingClientRect().width;
 			let height = canvas.height = listServices.getBoundingClientRect().height;
+			const blocks = [
+				["house_design", false, [21.8, 39.5]],
+				["autonomous_sewerage", false, [44, 45.3]],
+				["distributing_water", false, [51, 46]],
+				["sewerage_wiring", false, [67, 40.5]],
+				["roof_installation", true, [19, 54]],
+				["well_construction", false, [80, 30], '#well_img'],
+				["electrical_installation", true, [58, 50.5]],
+				["heating_systems", true, [67, 48.7]]
+			]
 
-			function drawLine(el1, el2) {
-				context.clearRect(0, 0, width, height)
+			function drawLine(block, point, startFrom = false) {
+
 				context.strokeStyle = '#319F1C';
 				context.lineWidth = 2;
 				context.beginPath()
-				// из центра красного квадрата
-				context.moveTo(el1.getBoundingClientRect().x + el1.getBoundingClientRect().width / 2,
-					$(el1).offset().top - $(canvas_lines).offset().top + el1.getBoundingClientRect().height / 2)
-				// в центр зелёного квадрата
-				context.lineTo(el2.getBoundingClientRect().x + el2.getBoundingClientRect().width / 2,
-					$(el2).offset().top - $(canvas_lines).offset().top + el2.getBoundingClientRect().height / 2)
+
+				block.height = $(block.offsetHeight)[0];
+				block.width = $(block.offsetWidth)[0];
+				block.top = $(block).offset().top - $(canvas_lines).offset().top;
+				block.centerHeight = Math.ceil(block.top + block.height / 2);
+				block.left = $(block).offset().left;
+				point.height = $(point.offsetHeight)[0];
+				point.width = $(point.offsetWidth)[0];
+				point.top = $(point).offset().top - $(canvas_lines).offset().top;
+				point.centerHeight = Math.ceil(point.top + point.height / 2);
+				point.left = $(point).offset().left;
+
+				// Прорисовка линии из блока
+				if (startFrom) {
+					context.moveTo(block.left - 5, block.centerHeight)
+				} else {
+					context.moveTo(block.left + block.width + 5, block.centerHeight)
+				}
+
+				// Прорисовка поворота
+				if ((Math.abs(point.centerHeight - block.centerHeight)) >= 5) {
+					context.lineTo(point.left + point.width / 2, block.centerHeight);
+				}
+
+				// Прорисовка линии в точку
+				context.lineTo(point.left + point.width / 2, point.centerHeight)
 				context.stroke()
 			}
 
+			function drawAllLines() {
+				context.clearRect(0, 0, width, height);
+				blocks.forEach((value) => {
+					let block = $('#' + value[0]);
+					let point = $('#' + value[0] + '__point');
+					if (value[3]) {
+						point.css({
+							"top": $(value[3]).position().top + $(value[3]).height() * (value[2][0] / 100) + 'px',
+							"left": $(value[3]).offset().left + $(value[3]).width() * (value[2][1] / 100) + 'px',
+						});
+					}
+					drawLine(block[0], point[0], value[1]);
+				})
+			}
 
-			const houseDesignPoint = document.getElementById('house_design__point');
-			const lol = document.getElementById('lol');
+			blocks.forEach((value) => {
+				let point = $('<span>', {
+					'class': 'point',
+					'id': value[0] + '__point'
+				}).css({
+					"top": `${value[2][0]}%`,
+					"left": `${value[2][1]}%`,
+				});
+				$('#list_services').append(point);
+			});
 
-			drawLine(lol, houseDesignPoint);
-			$(window).resize(function () {
+
+			if ($(window).width() >= 992) {
+				drawAllLines()
+			}
+			$(window).on('resize', function () {
 				let width = canvas.width = listServices.getBoundingClientRect().width;
 				let height = canvas.height = listServices.getBoundingClientRect().height;
-				drawLine(lol, houseDesignPoint);
-			})
+				drawAllLines()
+				setTimeout(() => {
+					drawAllLines()
+				}, 150);
+			});
+
 		};
-
-
-
 	</script>
 </body>
 

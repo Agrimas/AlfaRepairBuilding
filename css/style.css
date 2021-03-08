@@ -523,13 +523,28 @@ button {
   fill: white;
 }
 
+#list_services {
+  position: relative;
+}
+
 .list-services {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (min-width: 992px) {
   .list-services {
     width: auto;
+    display: block;
   }
 }
 
@@ -555,23 +570,6 @@ button {
   width: 100%;
 }
 
-.house span {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #319F1C;
-}
-
-.house #house_design__point {
-  top: 21.8%;
-  left: 17%;
-}
-
-#list_services {
-  position: relative;
-}
-
 #canvas_lines {
   position: absolute;
   top: 0;
@@ -581,8 +579,24 @@ button {
 
 .well img {
   display: block;
+  width: 100%;
   position: relative;
   top: 20%;
+}
+
+span.point {
+  display: none;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #319F1C;
+}
+
+@media (min-width: 992px) {
+  span.point {
+    display: block;
+  }
 }
 
 #block-form h2 {

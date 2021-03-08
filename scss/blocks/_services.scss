@@ -64,14 +64,19 @@
 		}
 	}
 }
-
+#list_services {
+	position: relative;
+}
 .list-services {
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	@media (min-width: 992px) {
 		width: auto;
+		display: block;
 	}
 }
-
 .house {
 	flex: 0 0 33.333333%;
 	max-width: 33.333333%;
@@ -84,22 +89,8 @@
 	img {
 		width: 100%;
 	}
-	span {
-		position: absolute;
-		width: 6px;
-		height: 6px;
-		border-radius: 50%;
-		background-color: $green;
-	}
+}
 
-	#house_design__point {
-		top: 21.8%;
-		left: 17%;
-	}
-}
-#list_services {
-	position: relative;
-}
 #canvas_lines {
 	position: absolute;
 	top: 0;
@@ -108,6 +99,19 @@
 }
 .well img {
 	display: block;
+	width: 100%;
 	position: relative;
 	top: 20%;
+}
+
+span.point {
+	display: none;
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: $green;
+	@media (min-width: 992px) {
+		display: block;
+	}
 }
